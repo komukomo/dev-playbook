@@ -1,0 +1,7 @@
+---
+- name: Install clang tools
+  apt: name={{ item }} state=present
+  with_items:
+    - gdb
+    - clang-format
+    - exuberant-ctags
