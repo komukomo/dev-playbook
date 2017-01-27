@@ -1,0 +1,15 @@
+---
+- name: Get installer
+  get_url:
+    url: https://raw.githubusercontent.com/komukomo/dotfiles/master/install.sh
+    dest: /tmp/install-dotfiles.sh
+    mode: 0755
+
+- name: Install dotfiles
+  command: /tmp/install-dotfiles.sh
+  become: no
+
+- name: Remove installer
+  file:
+    path: /tmp/install-dotfiles.sh
+    state: absent
