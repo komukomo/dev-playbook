@@ -1,2 +1,5 @@
 [target]
 localhost ansible_connection=local
+
+[target:vars]
+docker_user=vagrant

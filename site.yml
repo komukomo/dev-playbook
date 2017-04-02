@@ -11,3 +11,4 @@
       - clang
       - python
       - dotfiles
+      - docker
