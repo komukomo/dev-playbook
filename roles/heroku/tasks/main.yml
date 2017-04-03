@@ -1,0 +1,19 @@
+---
+- name: Install packages to allow apt to use a repository over HTTPS
+  apt: name={{ item }} state=present
+  with_items:
+    - software-properties-common
+
+- name: Add GPG key
+  apt_key:
+    url: https://cli-assets.heroku.com/apt/release.key
+    state: present
+
+- name: Add heroku repository
+  apt_repository: >
+    repo='deb http://toolbelt.heroku.com/ubuntu ./'
+    state=present
+    update_cache=yes
+
+- name: Install heroku
+  apt: name=heroku state=present
