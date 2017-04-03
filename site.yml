@@ -10,5 +10,6 @@
       - basics
       - clang
       - python
+      - ruby
       - dotfiles
       - docker
